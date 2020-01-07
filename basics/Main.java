@@ -87,6 +87,7 @@ public class Main {
   ** second
   ** Input: none
   ** Output: String with the current time in HH:mm:ss format
+  ** and cycles per second in MHz
   **********************************************************/
   public static void clock() {
     int cycleCount = 0;
