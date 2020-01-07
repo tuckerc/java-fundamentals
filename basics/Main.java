@@ -3,6 +3,9 @@ import java.time.format.DateTimeFormatter;
 
 public class Main {
   public static void main(String[] args) {
+    /************************************************************
+    ** pluralize tests
+    ************************************************************/
     // int dogCount = 1;
     // System.out.println("I own " + dogCount + " " + pluralize("dog", dogCount) + ".");
 
@@ -12,6 +15,9 @@ public class Main {
     // int turtleCount = 0;
     // System.out.println("I own " + turtleCount + " " + pluralize("turtle", turtleCount) + ".");
 
+    /***********************************************************
+    ** flipNHeads tests
+    ***********************************************************/
     // int heads = 3;
     // int headsCount = flipNHeads(heads);
     // System.out.println("It took " + headsCount + " flips to flip " + heads + pluralize(" head", heads) + " in a row.");
@@ -28,7 +34,10 @@ public class Main {
     // headsCount = flipNHeads(heads);
     // System.out.println("It took " + headsCount + " flips to flip " + heads + pluralize(" head", heads) + " in a row.");
 
-    clock();
+    /***********************************************************
+    ** clock test
+    ***********************************************************/
+    // clock();
   }
 
   /********************************************************** 
@@ -80,11 +89,15 @@ public class Main {
   ** Output: String with the current time in HH:mm:ss format
   **********************************************************/
   public static void clock() {
+    int cycleCount = 0;
     while(true) {
+      cycleCount++;
       LocalDateTime now = LocalDateTime.now();
       if(now.getNano() == 0) {
         String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
-        System.out.println(time);
+        double megahertz = cycleCount / 1000000.0;
+        System.out.println(time + " " + megahertz + " MHz");
+        cycleCount = 0;
       }
     }
   }
