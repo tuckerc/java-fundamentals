@@ -12,3 +12,8 @@
 ![Psuedocode Version 1](./assets/flipNHeadsPsuedoV1.jpg)
 - Psuedocode Version 2
 ![Psuedocode Version 2](./assets/flipNHeadsPsuedoV2.jpg)
+
+3. **clock**
+- Description: method used to display the time second by second
+- Input: none
+- Output: String with the current time in HH:mm:ss format and cycles per second in MHz
