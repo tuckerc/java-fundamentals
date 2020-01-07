@@ -1,29 +1,34 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class Main {
   public static void main(String[] args) {
-    int dogCount = 1;
-    System.out.println("I own " + dogCount + " " + pluralize("dog", dogCount) + ".");
+    // int dogCount = 1;
+    // System.out.println("I own " + dogCount + " " + pluralize("dog", dogCount) + ".");
 
-    int catCount = 2;
-    System.out.println("I own " + catCount + " " + pluralize("cat", catCount) + ".");
+    // int catCount = 2;
+    // System.out.println("I own " + catCount + " " + pluralize("cat", catCount) + ".");
 
-    int turtleCount = 0;
-    System.out.println("I own " + turtleCount + " " + pluralize("turtle", turtleCount) + ".");
+    // int turtleCount = 0;
+    // System.out.println("I own " + turtleCount + " " + pluralize("turtle", turtleCount) + ".");
 
-    int heads = 3;
-    int headsCount = flipNHeads(heads);
-    System.out.println("It took " + headsCount + " flips to flip " + heads + pluralize(" head", heads) + " in a row.");
+    // int heads = 3;
+    // int headsCount = flipNHeads(heads);
+    // System.out.println("It took " + headsCount + " flips to flip " + heads + pluralize(" head", heads) + " in a row.");
 
-    heads = 0;
-    headsCount = flipNHeads(heads);
-    System.out.println("It took " + headsCount + " flips to flip " + heads + pluralize(" head", heads) + " in a row.");
+    // heads = 0;
+    // headsCount = flipNHeads(heads);
+    // System.out.println("It took " + headsCount + " flips to flip " + heads + pluralize(" head", heads) + " in a row.");
 
-    heads = 10;
-    headsCount = flipNHeads(heads);
-    System.out.println("It took " + headsCount + " flips to flip " + heads + pluralize(" head", heads) + " in a row.");
+    // heads = 10;
+    // headsCount = flipNHeads(heads);
+    // System.out.println("It took " + headsCount + " flips to flip " + heads + pluralize(" head", heads) + " in a row.");
 
-    heads = -1;
-    headsCount = flipNHeads(heads);
-    System.out.println("It took " + headsCount + " flips to flip " + heads + pluralize(" head", heads) + " in a row.");
+    // heads = -1;
+    // headsCount = flipNHeads(heads);
+    // System.out.println("It took " + headsCount + " flips to flip " + heads + pluralize(" head", heads) + " in a row.");
+
+    clock();
   }
 
   /********************************************************** 
@@ -65,5 +70,22 @@ public class Main {
       flipCount++;
     }
     return flipCount;
+  }
+
+  /********************************************************** 
+  ** Method Name: clock
+  ** Description: method used to display the time second by 
+  ** second
+  ** Input: none
+  ** Output: String with the current time in HH:mm:ss format
+  **********************************************************/
+  public static void clock() {
+    while(true) {
+      LocalDateTime now = LocalDateTime.now();
+      if(now.getNano() == 0) {
+        String time = now.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
+        System.out.println(time);
+      }
+    }
   }
 }
