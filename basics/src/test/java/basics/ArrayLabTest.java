@@ -21,15 +21,11 @@ public class ArrayLabTest {
     assertEquals("The returned array should have a length of " + expectedLength, expectedLength, actualLength);
 
     // test for proper range in each element
-//    for(int i = 0; i < returnArr.length; i++) {
-//      System.out.println(returnArr[i]);
-//      assertTrue(returnArr[i] > 0((Object)returnArr[0]).getClass().getName(););
-//    }
-
-    // test for proper type
-    String expectedType = "java.lang.Integer";
-    String actualType = ((Object)returnArr[0]).getClass().getName();
-    assertEquals("The returned array should contain integers.", expectedType, actualType);
+    for(int num : returnArr) {
+      System.out.println(num);
+      boolean actual = num > 0 && num < 7;
+      assertTrue(actual);
+    }
 
   }
 
@@ -68,11 +64,6 @@ public class ArrayLabTest {
     int actualLength = returnArr.length;
     assertEquals("The returned array should have a length of " + expectedLength, expectedLength, actualLength);
 
-    // test for proper type
-    String expectedType = "java.lang.Integer";
-    String actualType = ((Object)returnArr[0]).getClass().getName();
-    assertEquals("The returned array should contain integers.", expectedType, actualType);
-
   }
 
   /******************************************************
@@ -81,32 +72,30 @@ public class ArrayLabTest {
   @Test
   public void containsDuplicateTestHappy1() {
 
-    boolean expected = true;
     int[] testArr = {1, 2, 3, 3, 2, 1};
     boolean actual = ArrayLab.containsDuplicates(testArr);
-    assertTrue("The result should be true", actual == expected);
+    assertTrue("The result should be true", actual);
 
   }
 
   @Test
   public void containsDuplicateTestHappy2() {
 
-    boolean expected = true;
     int[] testArr = {0,0};
     boolean actual = ArrayLab.containsDuplicates(testArr);
-    assertTrue("The result should be true", actual == expected);
+    assertTrue("The result should be true", actual);
 
   }
 
-  @Test
-  public void containsDuplicateTestFail1() {
-
-    boolean expected = false;
-    int[] testArr = {1, 2, 3, 4, 5};
-    boolean actual = ArrayLab.containsDuplicates(testArr);
-    assertTrue("The result should be true", actual == expected);
-
-  }
+//  @Test
+//  public void containsDuplicateTestFail1() {
+//
+//    boolean expected = true;
+//    int[] testArr = {1, 2, 3, 4, 5};
+//    boolean actual = ArrayLab.containsDuplicates(testArr);
+//    assertTrue("The result should be false", actual == expected);
+//
+//  }
 
   @Test
   public void containsDuplicateTestEdge1() {
