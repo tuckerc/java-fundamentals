@@ -80,11 +80,11 @@ public class ArrayLab {
   }
 
   /**************************************************************
-   * Method Name: twoDimArrayAverage
+   * Method Name: lowestArrayAverage
    * Description: Method used to calculate the average of each
-   * array within an array
+   * array within an array and return the lowest average
    * Input: array of arrays of integers
-   * Output: array of integers holding each average
+   * Output: integer with the lowest average
    **************************************************************/
   public static int lowestAverage(int[][] arr) {
 
