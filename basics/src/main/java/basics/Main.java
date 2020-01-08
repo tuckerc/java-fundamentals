@@ -37,7 +37,7 @@ public class Main {
     /***********************************************************
     ** clock test
     ***********************************************************/
-    // clock();
+    clock();
   }
 
   /********************************************************** 
@@ -67,7 +67,7 @@ public class Main {
   public static int flipNHeads(int n) {
     int flipCount = 0;
     int headsCount = 0;
-    while (n > 0 && headsCount < n) {
+    while (headsCount < n) {
       if (Math.random() > 0.5) {
         System.out.println("heads");
         headsCount++;
