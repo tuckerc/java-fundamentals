@@ -18,7 +18,7 @@ public class ArrayLab {
 
     // roll die rollCount times and store each result
     for (int i = 0; i < rollCount; i++) {
-      results[i] = (int) Math.random() * 7;
+      results[i] = (int) ((Math.random() * 6) + 1);
     }
 
     return results;
