@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="basics.ArrayLabTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2020-01-09T21:41:33" hostname="tuckercGalagoPro" time="0.052">
+  <properties/>
+  <testcase name="arrayAverageTestEdge1" classname="basics.ArrayLabTest" time="0.008"/>
+  <testcase name="arrayAverageTestFail1" classname="basics.ArrayLabTest" time="0.0"/>
+  <testcase name="rollTestEdge1" classname="basics.ArrayLabTest" time="0.033"/>
+  <testcase name="rollTestFail1" classname="basics.ArrayLabTest" time="0.0"/>
+  <testcase name="lowestAverageTestHappy1" classname="basics.ArrayLabTest" time="0.001"/>
+  <testcase name="lowestAverageTestHappy2" classname="basics.ArrayLabTest" time="0.0"/>
+  <testcase name="rollTestHappy1" classname="basics.ArrayLabTest" time="0.002"/>
+  <testcase name="rollTestHappy2" classname="basics.ArrayLabTest" time="0.0"/>
+  <testcase name="arrayAverageTestHappy1" classname="basics.ArrayLabTest" time="0.001"/>
+  <testcase name="arrayAverageTestHappy2" classname="basics.ArrayLabTest" time="0.001"/>
+  <testcase name="containsDuplicateTestHappy1" classname="basics.ArrayLabTest" time="0.0"/>
+  <testcase name="containsDuplicateTestHappy2" classname="basics.ArrayLabTest" time="0.0"/>
+  <testcase name="lowestAverageTestEdge1" classname="basics.ArrayLabTest" time="0.0"/>
+  <testcase name="lowestAverageTestFail1" classname="basics.ArrayLabTest" time="0.001"/>
+  <testcase name="containsDuplicateTestEdge1" classname="basics.ArrayLabTest" time="0.0"/>
+  <system-out><![CDATA[6
+4
+2
+4
+4
+4
+3
+1
+2
+2
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

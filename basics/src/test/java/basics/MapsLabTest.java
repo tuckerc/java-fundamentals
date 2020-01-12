@@ -2,7 +2,6 @@ package basics;
 
 import org.junit.Test;
 
-import java.nio.file.Path;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -129,13 +128,6 @@ public class MapsLabTest {
     String actualWinner = MapsLab.tally(votes);
 
     assertEquals(expectedWinner, actualWinner);
-
-  }
-
-  @Test
-  public void testLinterHappy() {
-
-    Path filePath = new Path
 
   }
 

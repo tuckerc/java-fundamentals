@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="basics.MapsLabTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2020-01-09T21:41:33" hostname="tuckercGalagoPro" time="0.035">
+  <properties/>
+  <testcase name="testTallyHappy" classname="basics.MapsLabTest" time="0.001"/>
+  <testcase name="testWeatherDataHappy" classname="basics.MapsLabTest" time="0.032"/>
+  <testcase name="testTallyEdge" classname="basics.MapsLabTest" time="0.0"/>
+  <testcase name="testTallyFail" classname="basics.MapsLabTest" time="0.0"/>
+  <testcase name="testWeatherDataEdge" classname="basics.MapsLabTest" time="0.001"/>
+  <testcase name="testWeatherDataFail" classname="basics.MapsLabTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

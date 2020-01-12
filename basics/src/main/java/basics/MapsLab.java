@@ -1,7 +1,9 @@
 package basics;
 
-import java.nio.file.Path;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 public class MapsLab {
   /******************************************************************
@@ -96,25 +98,6 @@ public class MapsLab {
 
     // return option with the most votes
     return winner;
-
-  }
-
-  /******************************************************************
-   * Method Name: linter
-   * Description: Method used to examine a JavaScript file and
-   * identify missing semicolons.
-   * Input: Path to JavaScript file
-   * Output: String with linter results
-   ******************************************************************/
-  public static String linter(Path filePath) {
-
-    // String to store linter results
-    String results = "";
-
-
-
-    // return results
-    return results;
 
   }
 
