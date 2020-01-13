@@ -3,3 +3,4 @@
 
 ## [Basics](./basics/)
 ## [Linter](./linter/)
+## [Bitmap Transformations](./bitmap-transformer)
