@@ -5,35 +5,130 @@ package bitmap.transformer;
 
 import org.junit.Test;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
 import java.io.File;
 
 import static org.junit.Assert.*;
 
 public class AppTest {
 
-    @Test public void readFileTestGoodRead() {
+    @Test
+    public void testInvert() {
 
+      String[] args = {"src/test/assets/mario.bmp", "src/test/assets/marioInverted.bmp", "invert"};
 
-        Bitmap newBitmap = new Bitmap();
+      App.main(args);
 
-       newBitmap.readBitmap(new File("src/main/assets/mario.bmp"));
+      Bitmap expectedBitmap = new Bitmap();
+      expectedBitmap.readBitmap(new File("src/main/assets/marioInverted.bmp"));
 
-        assertEquals("Good Read", newBitmap.readBitmap(new File("src/main/assets/mario.bmp")));
+      Bitmap actualBitmap = new Bitmap();
+      actualBitmap.readBitmap(new File("src/test/assets/marioInverted.bmp"));
+
+      int expectedWidth = expectedBitmap.img.getWidth();
+      int actualWidth = actualBitmap.img.getWidth();
+      assertEquals(expectedWidth, actualWidth);
+
+      int expectedHeight = expectedBitmap.img.getHeight();
+      int actualHeight = actualBitmap.img.getHeight();
+      assertEquals(expectedHeight, actualHeight);
+
+      for (int i = 0; i < actualWidth; i++) {
+        for (int j = 0; j < actualHeight; j++) {
+          assertEquals(expectedBitmap.img.getRGB(i, j), actualBitmap.img.getRGB(i, j));
+        }
+      }
+
     }
-    @Test public void readFileTestBadRead() {
 
+  @Test
+  public void testRandomize() {
 
-        Bitmap newBitmap = new Bitmap();
+    String[] args = {"src/test/assets/mario.bmp", "src/test/assets/marioRandom.bmp", "random"};
 
-        newBitmap.readBitmap(new File("src/main/assets/mario.bmp"));
+    App.main(args);
 
-        assertEquals("Bad Read", newBitmap.readBitmap(new File("src/main/assets/mario.jpg")));
+    Bitmap expectedBitmap = new Bitmap();
+    expectedBitmap.readBitmap(new File("src/main/assets/mario.bmp"));
+
+    Bitmap actualBitmap = new Bitmap();
+    actualBitmap.readBitmap(new File("src/test/assets/marioRandom.bmp"));
+
+    int expectedWidth = expectedBitmap.img.getWidth();
+    int actualWidth = actualBitmap.img.getWidth();
+    assertEquals(expectedWidth, actualWidth);
+
+    int expectedHeight = expectedBitmap.img.getHeight();
+    int actualHeight = actualBitmap.img.getHeight();
+    assertEquals(expectedHeight, actualHeight);
+
+    for (int i = 0; i < actualWidth; i++) {
+      for (int j = 0; j < actualHeight; j++) {
+        assertNotEquals(expectedBitmap.img.getRGB(i, j), actualBitmap.img.getRGB(i, j));
+      }
     }
+
+  }
+
+  @Test
+  public void testLighten() {
+
+    String[] args = {"src/test/assets/mario.bmp", "src/test/assets/marioLighter.bmp", "lighten"};
+
+    App.main(args);
+
+    Bitmap expectedBitmap = new Bitmap();
+    expectedBitmap.readBitmap(new File("src/main/assets/marioLighter.bmp"));
+
+    Bitmap actualBitmap = new Bitmap();
+    actualBitmap.readBitmap(new File("src/test/assets/marioLighter.bmp"));
+
+    int expectedWidth = expectedBitmap.img.getWidth();
+    int actualWidth = actualBitmap.img.getWidth();
+    assertEquals(expectedWidth, actualWidth);
+
+    int expectedHeight = expectedBitmap.img.getHeight();
+    int actualHeight = actualBitmap.img.getHeight();
+    assertEquals(expectedHeight, actualHeight);
+
+    for (int i = 0; i < actualWidth; i++) {
+      for (int j = 0; j < actualHeight; j++) {
+        assertEquals(expectedBitmap.img.getRGB(i, j), actualBitmap.img.getRGB(i, j));
+      }
+    }
+
+  }
+
+  @Test
+  public void testDarken() {
+
+    String[] args = {"src/test/assets/mario.bmp", "src/test/assets/marioDarker.bmp", "darken"};
+
+    App.main(args);
+
+    Bitmap expectedBitmap = new Bitmap();
+    expectedBitmap.readBitmap(new File("src/main/assets/marioDarker.bmp"));
+
+    Bitmap actualBitmap = new Bitmap();
+    actualBitmap.readBitmap(new File("src/test/assets/marioDarker.bmp"));
+
+    int expectedWidth = expectedBitmap.img.getWidth();
+    int actualWidth = actualBitmap.img.getWidth();
+    assertEquals(expectedWidth, actualWidth);
+
+    int expectedHeight = expectedBitmap.img.getHeight();
+    int actualHeight = actualBitmap.img.getHeight();
+    assertEquals(expectedHeight, actualHeight);
+
+    for (int i = 0; i < actualWidth; i++) {
+      for (int j = 0; j < actualHeight; j++) {
+        assertEquals(expectedBitmap.img.getRGB(i, j), actualBitmap.img.getRGB(i, j));
+      }
+    }
+
+  }
 
 
 }
-
-// Given more time I would write test for the invert transformation to see if it is correctly inverting color scheme
-
-// Also write another test to make sure the file path is correct
 

@@ -12,32 +12,21 @@ public class Bitmap {
 
   BufferedImage img = null;
 
-  public String readBitmap(File path) {
-      String goodRead = "Good Read";
-      String badRead = "Bad Read";
+  public void readBitmap(File path) {
       try {
       this.img = ImageIO.read(path);
-      System.out.println(this.img);
-      return goodRead;
     } catch (IOException e) {
-
-    // e.printStackTrace();
-          return badRead;
-      //System.out.println("can't read file");
-     // return badRead;
-
+        System.out.println("couldn't read file");
+        e.printStackTrace();
     }
-
-   // System.out.println("image read successfully");
   }
 
    public void imageToFile(File path){
      try {
-
        ImageIO.write(this.img, "bmp", path);
      } catch (IOException e) {
+       System.out.println("couldn't write file");
        e.printStackTrace();
-       System.out.println("can't read file");
      }
 
     }
@@ -54,8 +43,47 @@ public class Bitmap {
           img.setRGB(x, y, color.getRGB());
         }
       }
-      return "image inverted successfully";
+      return "Image inverted successfully";
     }
+
+  public String randomizeImage() {
+
+    for (int x = 0; x < this.img.getWidth(); x++) {
+      for (int y = 0; y < this.img.getHeight(); y++) {
+        int rgba = img.getRGB(x, y);
+        Color color = new Color(rgba, true);
+        color = new Color((int) (Math.random() * 256), (int) (Math.random() * 256), (int) (Math.random() * 256));
+        img.setRGB(x, y, color.getRGB());
+      }
+    }
+    return "Image randomized successfully";
+  }
+
+  public String darkenImage() {
+
+    for (int x = 0; x < this.img.getWidth(); x++) {
+      for (int y = 0; y < this.img.getHeight(); y++) {
+        int rgba = img.getRGB(x, y);
+        Color color = new Color(rgba, true);
+        color = new Color((int) (color.getRed() * 0.5), (int) (color.getGreen() * 0.5), (int) (color.getBlue() * 0.5));
+        img.setRGB(x, y, color.getRGB());
+      }
+    }
+    return "Image successfully darken";
+  }
+
+  public String lightenImage() {
+
+    for (int x = 0; x < this.img.getWidth(); x++) {
+      for (int y = 0; y < this.img.getHeight(); y++) {
+        int rgba = img.getRGB(x, y);
+        Color color = new Color(rgba, true);
+        color = new Color((int) Math.min((color.getRed() * 1.5), 255), (int) Math.min((color.getGreen() * 1.5), 255), (int) Math.min((color.getBlue() * 1.5), 255));
+        img.setRGB(x, y, color.getRGB());
+      }
+    }
+    return "Image successfully darken";
+  }
 
 }
 

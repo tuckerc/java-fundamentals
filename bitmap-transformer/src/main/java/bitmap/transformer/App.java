@@ -19,6 +19,16 @@ public class App {
         if (args[2].equals("invert")) {
             System.out.println(newBitmap.invertImage());
         }
+        else if (args[2].equals("random")) {
+            System.out.println(newBitmap.randomizeImage());
+        }
+        else if (args[2].equals("lighten")) {
+            System.out.println(newBitmap.lightenImage());
+        }
+        else if (args[2].equals("darken")) {
+            System.out.println(newBitmap.darkenImage());
+        }
+        else System.out.println("transformation not recognized");
 
         // write image
         newBitmap.imageToFile(new File(args[1]));
