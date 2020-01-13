@@ -37,3 +37,13 @@
 - Description: Method used to calculate the average of each array within an array and return the lowest average
 - Input: array of arrays of integers
 - Output: integer with the lowest average
+
+**weatherData**
+- Description: Method used to analyze temperatures in a given month. The min and max temperatures are identified as well as all the temperatures within the range of min - max that did not occur during the month.
+- Input: array of integer arrays representing temperatures in each week
+- Output: String with analysis results
+
+**tally**
+- Description: Method used to tally the number of votes each option receives and returns the winner.
+- Input: ArrayList containing individual votes
+- Output: String with the winner
