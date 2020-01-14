@@ -9,7 +9,7 @@ public class ReviewTest {
   String body = "This place is great!";
   String author = "Bob Smith";
   Integer stars = 5;
-  Review<String, Integer> goodReview = new Review<>(body, author, stars);
+  Review goodReview = new Review(body, author, stars);
 
   @Test
   public void review_constructorTest() {

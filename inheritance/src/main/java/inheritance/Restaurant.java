@@ -2,7 +2,7 @@ package inheritance;
 
 import java.util.LinkedList;
 
-public class Restaurant<String, Integer, Double, Review> {
+public class Restaurant {
 
   private String name;
   private Double numberOfStars;
@@ -55,8 +55,10 @@ public class Restaurant<String, Integer, Double, Review> {
    *****************************************************************/
   public void addReview(Review review) {
     this.getReviews().add(review);
-    Double newStars = (this.getNumberOfStars() + review
-    this.setNumberOfStars();
+    Double currentStars = this.getNumberOfStars();
+    Integer reviewStars
+    Double newStars = (this.getNumberOfStars() + review.getNumberOfStars()) / (this.getReviews().size() + 1);
+    this.setNumberOfStars(newStars);
   }
 
   @Override
