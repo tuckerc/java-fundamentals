@@ -8,9 +8,9 @@ import static org.junit.Assert.*;
 public class RestaurantTest {
 
   String name = "Canlis";
-  Integer stars = 5;
+  Double stars = 5.0;
   Integer price = 5;
-  Restaurant<String, Integer, Review<String, Integer>> testRestaurant = new Restaurant<>(name, stars, price);
+  Restaurant testRestaurant = new Restaurant (name, stars, price);
 
   @Before
   public void setUp() {
@@ -36,9 +36,15 @@ public class RestaurantTest {
     String body = "This place is great!";
     String author = "Bob Smith";
     Integer stars = 5;
-    Review<String, Integer> review = new Review<>(body, author, stars);
+    Review review = new Review(body, author, stars);
     testRestaurant.addReview(review);
+    body = "Perfect except they gave me the wrong coat.";
+    author = "Tina C.";
+    stars = 4;
+    Review review2 = new Review(body, author, stars);
+    testRestaurant.addReview(review2);
     assertTrue(testRestaurant.getReviews().contains(review));
+    assertEquals(testRestaurant.getNumberOfStars(), (Double) 4.5);
   }
 
 }
