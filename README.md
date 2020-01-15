@@ -4,3 +4,4 @@
 ## [Basics](./basics/)
 ## [Linter](./linter/)
 ## [Bitmap Transformations](./bitmap-transformer)
+## [Inheritance](./inheritance)

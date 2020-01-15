@@ -8,7 +8,7 @@ public class ReviewTest {
 
   String body = "This place is great!";
   String author = "Bob Smith";
-  Integer stars = 5;
+  Double stars = 5.0;
   Review goodReview = new Review(body, author, stars);
 
   @Test
