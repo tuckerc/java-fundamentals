@@ -56,7 +56,7 @@ public class ShopTest {
   }
 
   @Test
-  public void restaurant_addReviewTest() {
+  public void shop_addReviewTest() {
     String body = "This place is great!";
     String author = "Bob Smith";
     Double stars = 5.0;
