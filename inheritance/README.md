@@ -1,18 +1,43 @@
 # Inheritance
-This is sort of a silly name for this lab considering inheritance was not explicitly used. Nonetheless the name is the name.
+This package implements interfaces and inheritance for reviewable businesses.
 
-## Restaurant Class
-Representation of a restaurant object to be used in an rating application like Yelp.
+## Reviewable Interface
+Provides an interface for a reviewable business
+
+## Business Class
+Representation of a reviewable business
 
 ### Properties
-* Restaurant name
-* Average number of stars
-* Price category ($$$$)
-* List of reviews
+name, description, average number of stars, price category ($$$), list of reviews
+
+## Restaurant Class
+Representation of a reviewable restaurant. Subclass of Business class.
+
+### Properties
+* All inherited properties
 
 ### Methods
-* updateStars: used to update the average stars as needed
-* addReview: used to add a review to the list of reviews
+* All inherited methods
+
+## Shop Class
+Representation of a reviewable shop. Subclass of Business class.
+
+### Properties
+* All inherited properties
+
+### Methods
+* All inherited methods
+
+## Theater Class
+Representation of a reviewable shop. Subclass of Business class.
+
+### Properties
+* All inherited properties
+* List of movies
+
+### Methods
+* All inherited methods
+* addMovie, removeMovie
 
 ## Review Class
 Representation of a review for any business on a rating application like Yelp

@@ -7,26 +7,27 @@ import static org.junit.Assert.*;
 
 public class RestaurantTest {
 
-  String name = "Canlis";
-  Integer price = 5;
-  Restaurant testRestaurant = new Restaurant (name, price);
+
+  Restaurant testRestaurant;
 
   @Before
   public void setUp() {
-
+    String name = "Canlis";
+    Integer price = 5;
+    testRestaurant = new Restaurant (name, price);
   }
 
   @Test
   public void restaurant_constructorTest() {
-    assertEquals(testRestaurant.getName(), name);
-    assertEquals(testRestaurant.getNumberOfStars(), (Double) 0.0);
-    assertEquals(testRestaurant.getPriceCategory(), price);
+    assertEquals("Canlis", testRestaurant.getName());
+    assertEquals((Double) 0.0, testRestaurant.getNumberOfStars());
+    assertEquals((Integer) 5, testRestaurant.getPriceCategory());
   }
 
   @Test
   public void restaurant_toStringTest() {
     StringBuilder expected = new StringBuilder();
-    expected.append(name).append(": ").append((Double) 0.0).append(" stars, price category of ").append(price);
+    expected.append("Canlis").append(": ").append((Double) 0.0).append(" stars, price category of ").append((Integer) 5);
     assertEquals(expected.toString(), testRestaurant.toString());
   }
 
